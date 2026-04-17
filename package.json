@@ -1,5 +1,5 @@
 {
-  "name": "@adjective-rob/gerolamo-mcp",
+  "name": "gerolamo-mcp",
   "version": "1.0.0",
   "mcpName": "io.github.adjective-rob/gerolamo",
   "description": "Connect your agent to Gerolamo — competitive intelligence across 30k+ open-source projects, papers, and models with defensibility scoring",

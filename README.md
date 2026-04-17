@@ -7,7 +7,7 @@ Every entity is scored for defensibility (1-10), frontier-lab risk, threat profi
 ## Quick Setup
 
 ```bash
-npx @adjective-rob/gerolamo-mcp setup
+npx gerolamo-mcp setup
 ```
 
 This adds Gerolamo to your Claude Code MCP configuration. You'll need an API key — sign up at [gerolamo.org](https://gerolamo.org) and generate one in Settings.
@@ -32,7 +32,7 @@ Add to `~/.claude/mcp.json`:
 ## Programmatic Usage
 
 ```typescript
-import { getConfig, TOOLS } from "@adjective-rob/gerolamo-mcp";
+import { getConfig, TOOLS } from "gerolamo-mcp";
 
 // Generate MCP config
 const config = getConfig("ger_your_key_here");
@@ -105,9 +105,9 @@ query_intelligence(question="vector database")
 ## CLI Commands
 
 ```bash
-npx @adjective-rob/gerolamo-mcp setup          # Configure Claude Code
-npx @adjective-rob/gerolamo-mcp setup --key K   # Configure with specific key
-npx @adjective-rob/gerolamo-mcp info             # List all tools
+npx gerolamo-mcp setup          # Configure Claude Code
+npx gerolamo-mcp setup --key K   # Configure with specific key
+npx gerolamo-mcp info             # List all tools
 ```
 
 ## Links

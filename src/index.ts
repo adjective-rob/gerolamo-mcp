@@ -30,7 +30,7 @@ export interface GerolamoMcpConfig {
  *
  * @example
  * ```typescript
- * import { getConfig } from "@adjective-rob/gerolamo-mcp";
+ * import { getConfig } from "gerolamo-mcp";
  * const config = getConfig("ger_your_key_here");
  * // Pass to your MCP client
  * ```

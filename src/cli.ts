@@ -4,9 +4,9 @@
  * Gerolamo MCP CLI — one-command setup for connecting your agent to Gerolamo.
  *
  * Usage:
- *   npx @adjective-rob/gerolamo-mcp setup
- *   npx @adjective-rob/gerolamo-mcp setup --key ger_xxx
- *   npx @adjective-rob/gerolamo-mcp info
+ *   npx gerolamo-mcp setup
+ *   npx gerolamo-mcp setup --key ger_xxx
+ *   npx gerolamo-mcp info
  */
 
 import * as fs from "node:fs";
@@ -119,8 +119,8 @@ switch (command) {
   default:
     console.log("\n  Gerolamo MCP\n");
     console.log("  Usage:");
-    console.log("    npx @adjective-rob/gerolamo-mcp setup          Set up Gerolamo in Claude Code");
-    console.log("    npx @adjective-rob/gerolamo-mcp setup --key K  Set up with a specific API key");
-    console.log("    npx @adjective-rob/gerolamo-mcp info           List all available tools\n");
+    console.log("    npx gerolamo-mcp setup          Set up Gerolamo in Claude Code");
+    console.log("    npx gerolamo-mcp setup --key K  Set up with a specific API key");
+    console.log("    npx gerolamo-mcp info           List all available tools\n");
     break;
 }

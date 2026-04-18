@@ -26,7 +26,7 @@ Add to `~/.claude/mcp.json`:
     "gerolamo": {
       "url": "https://gerolamo.onrender.com/mcp/sse",
       "headers": {
-        "X-API-Key": "ger_your_key_here"
+        "X-API-Key": "glm_your_key_here"
       }
     }
   }
@@ -39,7 +39,7 @@ Add to `~/.claude/mcp.json`:
 import { getConfig, TOOLS } from "gerolamo-mcp";
 
 // Generate MCP config
-const config = getConfig("ger_your_key_here");
+const config = getConfig("glm_your_key_here");
 
 // List available tools
 console.log(Object.keys(TOOLS)); // 22 tools

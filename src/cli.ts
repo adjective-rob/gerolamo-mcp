@@ -5,7 +5,7 @@
  *
  * Usage:
  *   npx gerolamo-mcp setup
- *   npx gerolamo-mcp setup --key ger_xxx
+ *   npx gerolamo-mcp setup --key glm_xxx
  *   npx gerolamo-mcp info
  */
 
@@ -67,8 +67,8 @@ async function setup(apiKey?: string): Promise<void> {
     process.exit(1);
   }
 
-  if (!apiKey.startsWith("ger_")) {
-    console.error("  Error: Invalid key format. Gerolamo API keys start with 'ger_'.\n");
+  if (!apiKey.startsWith("glm_")) {
+    console.error("  Error: Invalid key format. Gerolamo API keys start with 'glm_'.\n");
     process.exit(1);
   }
 

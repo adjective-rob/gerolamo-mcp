@@ -24,7 +24,7 @@ export interface GerolamoMcpConfig {
  *
  * Use this to programmatically configure any MCP-compatible client.
  *
- * @param apiKey - Your Gerolamo API key (starts with "ger_"). Get one at https://gerolamo.org/settings
+ * @param apiKey - Your Gerolamo API key (starts with "ger_"). Get one at https://gerolamo.org → Connect
  * @param url - Optional custom MCP endpoint URL (defaults to production)
  * @returns MCP client configuration object
  *
@@ -38,7 +38,7 @@ export interface GerolamoMcpConfig {
 export function getConfig(apiKey: string, url?: string): GerolamoMcpConfig {
   if (!apiKey) {
     throw new Error(
-      "Gerolamo API key is required. Get one at https://gerolamo.org/settings"
+      "Gerolamo API key is required. Get one at https://gerolamo.org → Connect"
     );
   }
   return {

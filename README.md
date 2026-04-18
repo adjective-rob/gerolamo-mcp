@@ -10,7 +10,11 @@ Every entity is scored for defensibility (1-10), frontier-lab risk, threat profi
 npx gerolamo-mcp setup
 ```
 
-This adds Gerolamo to your Claude Code MCP configuration. You'll need an API key — sign up at [gerolamo.org](https://gerolamo.org) and generate one in Settings.
+This adds Gerolamo to your Claude Code MCP configuration. You'll need an API key:
+
+1. Go to [gerolamo.org](https://gerolamo.org) and request an account
+2. Once approved, sign in
+3. Go to **Connect** and generate an API key
 
 ## Manual Setup
 

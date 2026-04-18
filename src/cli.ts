@@ -45,7 +45,7 @@ async function promptForKey(): Promise<string> {
 
   return new Promise((resolve) => {
     rl.question(
-      "Enter your Gerolamo API key (get one at https://gerolamo.org/settings): ",
+      "Enter your Gerolamo API key (https://gerolamo.org → Connect): ",
       (answer) => {
         rl.close();
         resolve(answer.trim());
@@ -63,7 +63,7 @@ async function setup(apiKey?: string): Promise<void> {
 
   if (!apiKey) {
     console.error("  Error: API key is required.");
-    console.error("  Sign up at https://gerolamo.org and generate a key in Settings.\n");
+    console.error("  Request an account at https://gerolamo.org, then go to Connect to generate a key.\n");
     process.exit(1);
   }
 

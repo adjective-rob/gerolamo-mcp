@@ -2,7 +2,7 @@
  * Gerolamo MCP — competitive intelligence for agents.
  *
  * Provides connection configuration and helpers for integrating
- * Gerolamo's 22 MCP tools into any agent framework.
+ * Gerolamo's 26 MCP tools into any agent framework.
  */
 
 export const GEROLAMO_MCP_URL = "https://gerolamo.onrender.com/mcp/sse";
@@ -60,8 +60,9 @@ export function getConfig(apiKey: string, url?: string): GerolamoMcpConfig {
 export const TOOLS = {
   // Intelligence search
   query_intelligence:
-    "Semantic search across all corpora — repos, papers, models",
-  search_intelligence: "RAG-synthesized answer to a research question",
+    "Semantic search across all corpora — repos, papers, models. Set include_meta=true to include meta molecules",
+  search_intelligence:
+    "RAG-synthesized answer to a research question. Set include_meta=true to include meta molecules",
   find_sleepers:
     "High-defensibility, low-traction molecules — hidden gems",
   find_alternatives:
@@ -79,7 +80,7 @@ export const TOOLS = {
 
   // Composition
   compose_molecules:
-    "Fuse entities into specs, comparisons, or research briefs",
+    "Fuse entities and/or meta molecules into specs, comparisons, or research briefs",
   suggest_tools:
     "Recommend which Gerolamo tools to use for a task",
 
@@ -103,6 +104,16 @@ export const TOOLS = {
   create_workspace: "Create a named workspace with entities",
   add_to_workspace: "Add entities to an existing workspace",
   submit_molecule: "Submit a URL for ingestion into the corpus",
+
+  // Meta molecules & lineage
+  submit_meta_molecule:
+    "Create a speculative meta molecule with required parent lineage",
+  realize_meta_molecule:
+    "Connect a meta molecule to a real URL and queue for ingestion",
+  trace_lineage:
+    "Trace ancestors or descendants of any entity or meta molecule",
+  find_family:
+    "Full lineage family — ancestors, descendants, and direct edges",
 } as const;
 
 export type GerolamoTool = keyof typeof TOOLS;

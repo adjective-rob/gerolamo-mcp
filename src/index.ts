@@ -2,7 +2,7 @@
  * Gerolamo MCP — competitive intelligence for agents.
  *
  * Provides connection configuration and helpers for integrating
- * Gerolamo's 27 MCP tools into any agent framework.
+ * Gerolamo's 23 MCP tools into any agent framework.
  */
 
 export const GEROLAMO_MCP_URL = "https://gerolamo.onrender.com/mcp/sse";
@@ -81,6 +81,8 @@ export const TOOLS = {
   // Composition
   compose_molecules:
     "Fuse entities and/or meta molecules into specs, comparisons, or research briefs",
+  save_composition:
+    "Persist a generated composition (SPEC.md, research brief, etc.) with lineage tracking and shareable URL",
   suggest_tools:
     "Recommend which Gerolamo tools to use for a task",
 

@@ -42,10 +42,10 @@ import { getConfig, TOOLS } from "gerolamo-mcp";
 const config = getConfig("glm_your_key_here");
 
 // List available tools
-console.log(Object.keys(TOOLS)); // 22 tools
+console.log(Object.keys(TOOLS)); // 23 tools
 ```
 
-## Available Tools (22)
+## Available Tools (23)
 
 ### Intelligence Search
 - **`query_intelligence`** — Semantic search across all corpora
@@ -61,6 +61,7 @@ console.log(Object.keys(TOOLS)); // 22 tools
 
 ### Composition
 - **`compose_molecules`** — Fuse entities into specs, comparisons, or research briefs
+- **`save_composition`** — Persist a generated composition with lineage tracking and shareable URL
 - **`suggest_tools`** — Recommend which Gerolamo tools to use for a task
 
 ### Intelligence Briefs
@@ -91,6 +92,7 @@ suggest_tools("I need to build an autonomous drone system")
 → get_intelligence_brief(topic="autonomous drone middleware")
 → find_sleepers(query="flight controller SLAM", min_score=6)
 → compose_molecules(entity_ids=[...], mode="compose")
+→ save_composition(workspace_name="Drone Stack", mode="compose", result=<output>, entity_ids=[...])
 ```
 
 **Threat-check your dependencies:**

@@ -2,7 +2,7 @@
  * Gerolamo MCP — competitive intelligence for agents.
  *
  * Provides connection configuration and helpers for integrating
- * Gerolamo's 23 MCP tools into any agent framework.
+ * Gerolamo's 29 MCP tools into any agent framework.
  */
 
 export const GEROLAMO_MCP_URL = "https://gerolamo.onrender.com/mcp/sse";
@@ -98,6 +98,8 @@ export const TOOLS = {
   find_defensible_clusters: "Cluster detection across the corpus",
 
   // Foundation models (Via Mentis)
+  recommend_model:
+    "Recommend the best model for a task based on capabilities, quality, and cost",
   check_model_pricing: "Foundation model pricing lookup",
   compare_foundation_models: "Side-by-side model comparison",
   get_domination_risk: "AI capability domination risk analysis",
@@ -120,6 +122,12 @@ export const TOOLS = {
     "Trace ancestors or descendants of any entity or meta molecule",
   find_family:
     "Full lineage family — ancestors, descendants, and direct edges",
+
+  // Workflows
+  list_workflows:
+    "List all available agent workflow templates — multi-step prompt chains for common tasks",
+  get_workflow:
+    "Get a workflow's full prompt template by slug — agent reads and executes the steps",
 } as const;
 
 export type GerolamoTool = keyof typeof TOOLS;

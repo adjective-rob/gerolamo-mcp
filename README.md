@@ -42,10 +42,10 @@ import { getConfig, TOOLS } from "gerolamo-mcp";
 const config = getConfig("glm_your_key_here");
 
 // List available tools
-console.log(Object.keys(TOOLS)); // 31 tools
+console.log(Object.keys(TOOLS)); // 32 tools
 ```
 
-## Available Tools (31)
+## Available Tools (32)
 
 ### Intelligence Search
 - **`query_intelligence`** — Semantic search across all corpora
@@ -60,6 +60,7 @@ console.log(Object.keys(TOOLS)); // 31 tools
 - **`explore_connections`** — 5 rings of intelligence context around an entity
 
 ### Composition
+- **`ideate_from_brief`** — Grounded, cited ideation from a solicitation/brief (RFI, Sources Sought, OTA, SBIR)
 - **`compose_molecules`** — Fuse entities into specs, comparisons, or research briefs
 - **`save_composition`** — Persist a generated composition with lineage tracking and shareable URL
 - **`suggest_tools`** — Recommend which Gerolamo tools to use for a task

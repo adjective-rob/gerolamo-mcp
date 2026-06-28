@@ -99,13 +99,6 @@ export const TOOLS = {
   get_creator_authority: "Creator authority score lookup",
   find_defensible_clusters: "Cluster detection across the corpus",
 
-  // Foundation models (Via Mentis)
-  recommend_model:
-    "Recommend the best model for a task based on capabilities, quality, and cost",
-  check_model_pricing: "Foundation model pricing lookup",
-  compare_foundation_models: "Side-by-side model comparison",
-  get_domination_risk: "AI capability domination risk analysis",
-
   // Workspace management
   create_workspace: "Create a named workspace with entities",
   add_to_workspace: "Add entities to an existing workspace",

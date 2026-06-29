@@ -91,9 +91,9 @@ export const TOOLS = {
   // Patterns & enhancements
   distill:
     "Distill a source into its reusable patterns (the building-block mechanisms inside it), each with a takes-X-produces-Y interface, effect, and provenance",
-  search_atoms:
+  search_patterns:
     "Search the pattern library, reusable mechanisms with provenance, semantic or filtered by effect mode",
-  compose_atoms:
+  compose_enhancement:
     "Compose patterns into an enhancement (a spec you apply to a project), grounded in real mechanisms and attributed to their sources. model=self for credit-free client-side composition",
 
   // Intelligence briefs
@@ -110,7 +110,7 @@ export const TOOLS = {
   // Workspace management
   create_workspace: "Create a named workspace with entities",
   add_to_workspace: "Add entities to an existing workspace",
-  submit_molecule: "Submit a URL to add a source to the corpus",
+  submit_source: "Submit a URL to add a source to the corpus",
 
   // Topic intelligence
   get_tracked_topics:

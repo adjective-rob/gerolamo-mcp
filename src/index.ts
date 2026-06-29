@@ -60,11 +60,11 @@ export function getConfig(apiKey: string, url?: string): GerolamoMcpConfig {
 export const TOOLS = {
   // Intelligence search
   query_intelligence:
-    "Semantic search across all corpora — repos, papers, models. Set include_meta=true to include meta molecules",
+    "Semantic search across all corpora — repos, papers, models. Set include_meta=true to include concepts",
   search_intelligence:
-    "RAG-synthesized answer to a research question. Set include_meta=true to include meta molecules",
+    "RAG-synthesized answer to a research question. Set include_meta=true to include concepts",
   find_sleepers:
-    "High-defensibility, low-traction molecules — hidden gems",
+    "High-scoring, low-traction sources, the hidden gems",
   find_alternatives:
     "Find projects that could replace a given entity",
 
@@ -82,11 +82,19 @@ export const TOOLS = {
   ideate_from_brief:
     "Ideate grounded technical approaches from a solicitation/brief (RFI, Sources Sought, OTA, SBIR) — decomposes requirements, grounds each in the corpus, synthesizes cited approaches, flags coverage gaps",
   compose_molecules:
-    "Fuse entities and/or meta molecules into specs, comparisons, or research briefs",
+    "Fuse entities and/or concepts into specs, comparisons, or research briefs",
   save_composition:
-    "Persist a generated composition (SPEC.md, research brief, etc.) with lineage tracking and shareable URL",
+    "Persist a generated enhancement (spec, research brief, etc.) with lineage tracking and a shareable URL",
   suggest_tools:
     "Recommend which Gerolamo tools to use for a task",
+
+  // Patterns & enhancements
+  distill:
+    "Distill a source into its reusable patterns (the building-block mechanisms inside it), each with a takes-X-produces-Y interface, effect, and provenance",
+  search_atoms:
+    "Search the pattern library, reusable mechanisms with provenance, semantic or filtered by effect mode",
+  compose_atoms:
+    "Compose patterns into an enhancement (a spec you apply to a project), grounded in real mechanisms and attributed to their sources. model=self for credit-free client-side composition",
 
   // Intelligence briefs
   get_intelligence_brief:
@@ -102,19 +110,19 @@ export const TOOLS = {
   // Workspace management
   create_workspace: "Create a named workspace with entities",
   add_to_workspace: "Add entities to an existing workspace",
-  submit_molecule: "Submit a URL for ingestion into the corpus",
+  submit_molecule: "Submit a URL to add a source to the corpus",
 
   // Topic intelligence
   get_tracked_topics:
     "List all tracked topics with entity counts, defensibility, and risk stats — use for research direction",
 
-  // Meta molecules & lineage
+  // Concepts & lineage
   submit_meta_molecule:
-    "Create a speculative meta molecule with required parent lineage",
+    "Create a speculative concept with required parent lineage",
   realize_meta_molecule:
-    "Connect a meta molecule to a real URL and queue for ingestion",
+    "Connect a concept to a real URL and queue for ingestion",
   trace_lineage:
-    "Trace ancestors or descendants of any entity or meta molecule",
+    "Trace ancestors or descendants of any entity or concept",
   find_family:
     "Full lineage family — ancestors, descendants, and direct edges",
 

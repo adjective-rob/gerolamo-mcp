@@ -1,6 +1,6 @@
 {
   "name": "gerolamo-mcp",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "mcpName": "io.github.adjective-rob/gerolamo",
   "description": "Connect your agent to Gerolamo — competitive intelligence across 36k+ open-source projects, papers, and models with defensibility scoring and foundation model economics",
   "main": "dist/index.js",

@@ -61,7 +61,7 @@ console.log(Object.keys(TOOLS)); // 32 tools
 
 ### Composition
 - **`ideate_from_brief`** — Grounded, cited ideation from a solicitation/brief (RFI, Sources Sought, OTA, SBIR)
-- **`compose_molecules`** — Fuse entities into specs, comparisons, or research briefs
+- **`compose_molecules`** — Fuse a kit of entities, concepts, and/or patterns (atom_ids) into specs, comparisons, or research briefs
 - **`save_composition`** — Persist a generated composition with lineage tracking and shareable URL
 - **`suggest_tools`** — Recommend which Gerolamo tools to use for a task
 

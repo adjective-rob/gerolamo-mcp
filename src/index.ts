@@ -82,7 +82,7 @@ export const TOOLS = {
   ideate_from_brief:
     "Ideate grounded technical approaches from a solicitation/brief (RFI, Sources Sought, OTA, SBIR) — decomposes requirements, grounds each in the corpus, synthesizes cited approaches, flags coverage gaps",
   compose_molecules:
-    "Fuse entities and/or concepts into specs, comparisons, or research briefs",
+    "Fuse a working kit of entities, concepts, and/or patterns (atom_ids) into specs, comparisons, or research briefs — the engine uses the pieces that serve the target and reports what it used. model=self for credit-free client-side composition",
   save_composition:
     "Persist a generated enhancement (spec, research brief, etc.) with lineage tracking and a shareable URL",
   suggest_tools:
@@ -92,7 +92,7 @@ export const TOOLS = {
   distill:
     "Distill a source into its reusable patterns (the building-block mechanisms inside it), each with a takes-X-produces-Y interface, effect, and provenance",
   search_patterns:
-    "Search the pattern library, reusable mechanisms with provenance, semantic or filtered by effect mode",
+    "Search the pattern library of reusable mechanisms — hybrid keyword + semantic with a relevance floor, sortable (relevance/newest/corroborated) and filterable by effect mode and corroboration",
   compose_enhancement:
     "Compose patterns into an enhancement (a spec you apply to a project), grounded in real mechanisms and attributed to their sources. model=self for credit-free client-side composition",
 

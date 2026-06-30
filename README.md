@@ -1,8 +1,8 @@
 # Gerolamo MCP
 
-Connect your agent to [Gerolamo](https://gerolamo.org) — competitive intelligence across 36,000+ open-source projects, research papers, and ML models, plus foundation model economics via Via Mentis.
+Connect your agent to [Gerolamo](https://gerolamo.org) — competitive intelligence across 36,000+ open-source projects, research papers, and ML models.
 
-Every entity is scored for defensibility (1-10), frontier-lab risk, threat profile, and composability. Your agent can search, analyze, compare, compose technology stacks, and get model recommendations.
+Every entity is scored for utility, momentum, and corroboration, with frontier-lab risk, threat profile, and composability. Your agent can search the corpus, distill reusable patterns, compose enhancements and specs, profile creators, and trace lineage.
 
 ## Quick Setup
 
@@ -42,28 +42,42 @@ import { getConfig, TOOLS } from "gerolamo-mcp";
 const config = getConfig("glm_your_key_here");
 
 // List available tools
-console.log(Object.keys(TOOLS)); // 32 tools
+console.log(Object.keys(TOOLS)); // 31 tools
 ```
 
-## Available Tools (32)
+## Vocabulary
+
+Gerolamo's corpus is organized into four altitudes. The tool names are stable wire identifiers, but the concepts they work on are:
+
+- **Source** — a real corpus entity (a repo, paper, or model).
+- **Pattern** — a reusable mechanism distilled out of a source (takes-X-produces-Y).
+- **Concept** — a speculative project idea with parent lineage (formerly "meta molecule").
+- **Enhancement** — a spec you compose from patterns and apply to a project.
+
+## Available Tools (31)
 
 ### Intelligence Search
-- **`query_intelligence`** — Semantic search across all corpora
+- **`query_intelligence`** — Semantic search across all corpora (set `include_meta=true` to include concepts)
 - **`search_intelligence`** — RAG-synthesized answer to a research question
-- **`find_sleepers`** — High-defensibility, low-traction hidden gems
+- **`find_sleepers`** — High-scoring, low-traction sources — the hidden gems
 - **`find_alternatives`** — Find projects that could replace a given entity
 
 ### Analysis
 - **`score_stack`** — Weakest-link defensibility analysis for a dependency set
-- **`explain_score`** — Full reasoning behind an entity's defensibility score
+- **`explain_score`** — Full reasoning behind an entity's score
 - **`analyze_competitive_landscape`** — Velocity-ranked topic analysis
 - **`explore_connections`** — 5 rings of intelligence context around an entity
 
 ### Composition
 - **`ideate_from_brief`** — Grounded, cited ideation from a solicitation/brief (RFI, Sources Sought, OTA, SBIR)
-- **`compose_molecules`** — Fuse a kit of entities, concepts, and/or patterns (atom_ids) into specs, comparisons, or research briefs
-- **`save_composition`** — Persist a generated composition with lineage tracking and shareable URL
+- **`compose_molecules`** — Fuse a kit of entities, concepts, and/or patterns into specs, comparisons, or research briefs
+- **`save_composition`** — Persist a generated enhancement with lineage tracking and a shareable URL
 - **`suggest_tools`** — Recommend which Gerolamo tools to use for a task
+
+### Patterns & Enhancements
+- **`distill`** — Distill a source into its reusable patterns, each with an interface, effect, and provenance
+- **`search_patterns`** — Search the pattern library — hybrid keyword + semantic, sortable and filterable
+- **`compose_enhancement`** — Compose patterns into an enhancement, attributed to their sources
 
 ### Intelligence Briefs
 - **`get_intelligence_brief`** — Combined situation report: sleepers, trending, breakouts
@@ -75,25 +89,19 @@ console.log(Object.keys(TOOLS)); // 32 tools
 - **`get_creator_authority`** — Creator authority score lookup
 - **`find_defensible_clusters`** — Cluster detection across the corpus
 
-### Foundation Models (Via Mentis)
-- **`recommend_model`** — Recommend the best model for a task based on capabilities, quality, and cost
-- **`check_model_pricing`** — Foundation model pricing lookup
-- **`compare_foundation_models`** — Side-by-side model comparison
-- **`get_domination_risk`** — AI capability domination risk analysis
-
 ### Topic Intelligence
-- **`get_tracked_topics`** — List all tracked topics with entity counts, defensibility, and risk stats
+- **`get_tracked_topics`** — List all tracked topics with entity counts and risk stats
 
-### Meta Molecules & Lineage
-- **`submit_meta_molecule`** — Create a speculative meta molecule with required parent lineage
-- **`realize_meta_molecule`** — Connect a meta molecule to a real URL and queue for ingestion
-- **`trace_lineage`** — Trace ancestors or descendants of any entity or meta molecule
+### Concepts & Lineage
+- **`submit_meta_molecule`** — Create a speculative concept with required parent lineage
+- **`realize_meta_molecule`** — Connect a concept to a real URL and queue for ingestion
+- **`trace_lineage`** — Trace ancestors or descendants of any entity or concept
 - **`find_family`** — Full lineage family — ancestors, descendants, and direct edges
 
 ### Workspace
 - **`create_workspace`** — Create a named workspace with entities
 - **`add_to_workspace`** — Add entities to an existing workspace
-- **`submit_molecule`** — Submit a URL for ingestion into the corpus
+- **`submit_source`** — Submit a URL to add a source to the corpus
 
 ### Workflows
 - **`list_workflows`** — List all available agent workflow templates
@@ -108,21 +116,8 @@ Workflows are multi-step prompt templates that chain MCP tools into complete int
 → agent calls get_workflow("domain-discovery")
 → agent reads the 6-step prompt
 → agent executes each step using MCP tools, thinking between steps
-→ you end up with: meta molecules, compositions, submitted research
+→ you end up with: concepts, enhancements, submitted research
 ```
-
-**8 workflows available:**
-
-| Workflow | What it does | Difficulty |
-|----------|-------------|------------|
-| `domain-discovery` | Deep-dive a domain, find gaps, synthesize new ideas, build spec | Intermediate |
-| `cross-domain-intersection` | Find novel overlaps between tracked domains | Advanced |
-| `sleeper-hunt` | Find hidden gems and build something from them | Intermediate |
-| `stack-audit` | Audit dependencies, find weak links, discover alternatives | Beginner |
-| `creator-deep-dive` | Profile a creator, map network, predict next move | Intermediate |
-| `investment-thesis` | Market dynamics, defensible players, buy/watch/pass | Advanced |
-| `model-selection` | Compare foundation models for a use case | Beginner |
-| `trend-spotter` | Spot emerging trends, 90-day predictions | Intermediate |
 
 Browse and contribute workflows at [gerolamo-workflows](https://github.com/adjective-rob/gerolamo-workflows).
 
@@ -137,11 +132,12 @@ suggest_tools("I need to build an autonomous drone system")
 → save_composition(workspace_name="Drone Stack", mode="compose", result=<output>, entity_ids=[...])
 ```
 
-**Pick the right model for your project:**
+**Distill patterns and compose an enhancement:**
 ```
-recommend_model(task="vision-based document extraction", require="vision,structured_output", prefer="value")
-→ check_model_pricing(provider="google")
-→ compare_foundation_models(model_names="Gemini Flash, GPT-4o Mini, Claude Haiku")
+query_intelligence(question="retrieval-augmented generation")
+→ distill(molecule_id="<source-uuid>")
+→ search_patterns(query="chunking strategy", effect="retrieval")
+→ compose_enhancement(pattern_ids=[...])
 ```
 
 **Threat-check your dependencies:**
@@ -160,9 +156,9 @@ query_intelligence(question="vector database")
 ## CLI Commands
 
 ```bash
-npx gerolamo-mcp setup          # Configure Claude Code
+npx gerolamo-mcp setup           # Configure Claude Code
 npx gerolamo-mcp setup --key K   # Configure with specific key
-npx gerolamo-mcp info             # List all tools
+npx gerolamo-mcp info            # List all tools
 ```
 
 ## Links

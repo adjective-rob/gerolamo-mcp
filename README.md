@@ -135,7 +135,7 @@ suggest_tools("I need to build an autonomous drone system")
 **Distill patterns and compose an enhancement:**
 ```
 query_intelligence(question="retrieval-augmented generation")
-→ distill(molecule_id="<source-uuid>")
+→ distill(source_id="<source-uuid>")
 → search_patterns(query="chunking strategy", effect="retrieval")
 → compose_enhancement(pattern_ids=[...])
 ```
